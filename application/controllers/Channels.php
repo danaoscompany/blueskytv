@@ -1,6 +1,6 @@
 <?php
 
-class Main extends CI_Controller {
+class Channels extends CI_Controller {
 
 	public function get() {
 		$categories = $this->db->query("SELECT * FROM `channels` GROUP BY `category`");
