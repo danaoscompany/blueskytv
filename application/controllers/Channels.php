@@ -7,7 +7,7 @@ class Channels extends CI_Controller {
 		for ($i=0; $i<sizeof($categories); $i++) {
 			$category = $categories[$i]['category'];
 			$channels = $this->db->query("SELECT * FROM `channels` WHERE `category`='" . $category . "'")->result_array();
-			$category['channels'] = $channels;
+			$categories[$i]['channels'] = $channels;
 		}
 		echo json_encode($categories);
 	}
