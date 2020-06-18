@@ -3,7 +3,7 @@
 class Channels extends CI_Controller {
 
 	public function get() {
-		$categories = $this->db->query("SELECT * FROM `channels` GROUP BY `category`");
+		$categories = $this->db->query("SELECT * FROM `channels` GROUP BY `category`")->result_array();
 		for ($i=0; $i<sizeof($categories); $i++) {
 			$category = $categories[$i]['category'];
 			$channels = $this->db->query("SELECT * FROM `channels` WHERE `category`='" . $category . "'")->result_array();
